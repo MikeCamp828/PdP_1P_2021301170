@@ -1,0 +1,28 @@
+;gnu clisp  2.49.60
+;miguel angel ocampo porcayo 2021301170
+
+; factorial toma un argumento n que representa el número para calcular su factorial
+(defun factorial (n)
+    ;condicional if para realizar la verificación. Si n es menor o igual a 1,
+    ;significa que hemos alcanzado el caso base, y el factorial de 1 es simplemente 1. En ese caso, la función devuelve 1.
+  (if (<= n 1)
+      1
+      ;Si n es mayor que 1, entonces calculamos el factorial recursivamente. Esto se hace multiplicando
+      ;n por el factorial del número n-1. Aquí, (* n (factorial (- n 1))) es la expresión que realiza la multiplicación.
+      ;La función (- n 1) calcula n-1, es decir, el número anterior a n. Luego, se llama a la función factorial con el resultado
+      ;- n 1. Esto se hace de forma recursiva hasta que se alcanza el caso base.
+      (* n (factorial (- n 1)))))
+
+;escribe la funcion factorial con arguento de 5
+(write (factorial 5))
+
+
+
+
+(defun fibonacci (n)
+  (if (<= n 2)
+      1
+      (+ (fibonacci (- n 1)) (fibonacci (- n 2)))))
+
+; ejemplo para aplicae
+(write (fibonacci 10))
